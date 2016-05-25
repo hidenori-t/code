@@ -1,7 +1,7 @@
 '''
 enhanced_unit_converter_exit_power.py
 
-Unit converter: 
+Unit converter:
 
 Miles and Kilometers
 Kilograms and Pounds
@@ -66,7 +66,7 @@ if __name__ == '__main__':
             kg_pounds()
         if choice == '4':
             pounds_kg()
-        
+
         if choice == '5':
             cel_fahren()
         if choice == '6':
@@ -75,4 +75,3 @@ if __name__ == '__main__':
         answer = input('Do you want to exit? (y) for yes ')
         if answer == 'y':
             break
-
