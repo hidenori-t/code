@@ -51,29 +51,28 @@ def draw_trajectory(u, theta, t_flight):
     draw_graph(x, y)
 
 if __name__ == '__main__':
-"""
-cf.p.59 try...except ブロックを使うように言われている
-"""
-    try:
-        num_trajectories = int(input('How many trajectories? ')) # 何回値を受け取るか
-    
+    try: # cf.p.59 try...except ブロックを使うように言われている
+        
+        # 投射の速度と角度の値をユーザからいくつでも受け取れるプログラムにする
+        num_trajectories = int(input('How many trajectories? '))
         velocities = []
         angles = []
         for i in range(1, num_trajectories+1):
             v = input('Enter the initial velocity for trajectory {0} (m/s): '.format(i)) # 速度
             theta = input('Enter the angle of projection for trajectory {0} (degrees): '.format(i)) # 角度
             velocities.append(float(v))
-            angles.append(math.radians(float(theta)))
-
+            angles.append(math.radians(float(theta))) #角 theta を度からラジアンに変換        
+        
+        # 飛行時間，最大水平距離，最大垂直距離を投射の速度と角度の各組について出力
         for i in range(num_trajectories):
             # calculate time of flight, maximum horizontal distance and
             # maximum vertical distance
             t_flight = 2*velocities[i]*math.sin(angles[i])/g # Time of flight cf.p.52
-            S_x = velocities[i]*math.cos(angles[i])*t_flight
-            S_y = velocities[i]*math.sin(angles[i])*(t_flight/2) - (1/2)*g*(t_flight/2)**2
-            print('Initial velocity: {0} Angle of Projection: {1}'.format(velocities[i], math.degrees(angles[i])))
+            S_x = velocities[i]*math.cos(angles[i])*t_flight # 最大水平距離(S_x) cf.p.51
+            S_y = velocities[i]*math.sin(angles[i])*(t_flight/2) - (1/2)*g*(t_flight/2)**2 # 最大垂直距離(S_y) df.p.52
+            print('Initial velocity: {0} Angle of Projection: {1}'.format(velocities[i], math.degrees(angles[i]))) # 角 angles[i] をラジアンから度に変換
             print('T: {0} S_x: {1} S_y: {2}'.format(t_flight, S_x, S_y))
-            print()
+            print() # 行を空けている
             draw_trajectory(velocities[i], angles[i], t_flight)
         
         # Add a legend (凡例) and show the graph

@@ -2,6 +2,12 @@
 expenditures_barchart.py
 
 Visualizing the weekly expenditure using a bar chart
+
+2.6(p.59)
+問題2-4
+毎週の支出を簡単に比較できるような棒グラフ
+最初に支出のカテゴリの個数を聞き，
+各カテゴリの毎週の支出を訪ねてから，支出の棒グラフを作る
 '''
 
 import matplotlib.pyplot as plt
