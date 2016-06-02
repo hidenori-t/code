@@ -2,11 +2,14 @@
 fibonacci_goldenration.py
 
 Relationship between Fibonacci sequence and Golden ratio
+2.6
+問題2-5(p.62)
+隣り合うフィボナッチ数の比を100個についてグラフにプロットするプログラム
 '''
 
 import matplotlib.pyplot as plt
 
-def fibo(n):
+def fibo(n): # 最初のn個のフィボナッチ数のリストを返すプログラム
     if n == 1:
         return [1]
     if n == 2:

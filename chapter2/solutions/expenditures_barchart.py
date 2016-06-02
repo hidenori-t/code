@@ -18,6 +18,7 @@ def create_bar_chart(data, labels):
     # this list is the point on the y-axis where each
     # bar is centered. Here it will be [1, 2, 3..]
     positions = range(1, num_bars+1)
+    # 棒グラフには縦方向 bar関数，横方向 barh関数を使う
     plt.barh(positions, data, align='center')
     # set the label of each bar
     plt.yticks(positions, labels)
